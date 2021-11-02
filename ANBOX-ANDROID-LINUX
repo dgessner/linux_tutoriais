@@ -1,0 +1,18 @@
+INSTALAR APLICATIVO SIMULADOR ANDROID LINUX ANBOX (18/06/21)
+FONTE: https://www.how2shout.com/linux/how-to-install-anbox-on-ubuntu-20-04-lts-focal-fossa/
+
+sudo apt install anbox
+
+sudo snap install --devmode --beta anbox
+
+sudo apt install android-tools-adb
+
+sudo apt install wget curl lzip tar unzip squashfs-tools
+
+wget https://raw.githubusercontent.com/geeks-r-us/anbox-playstore-installer/master/install-playstore.sh
+
+chmod +x install-playstore.sh
+
+./install-playstore.sh
+
+sudo /snap/anbox/current/bin/anbox-bridge.sh start
