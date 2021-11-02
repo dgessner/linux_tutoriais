@@ -1,0 +1,53 @@
+CONFIGURAÇÃO DO CUPS (13/07/21)
+https://sudoti.com.br/ubuntu/configure-o-servidor-de-impressao-cups-no-ubuntu-bonjour-ipp-samba-airprint/
+
+Etapa 1: instalar e configurar o CUPS no Ubuntu
+Ubuntu desktop edition tem CUPS pré-instalado. Se você usar o Ubuntu Server Edition, precisará executar o seguinte comando para instalar o CUPS do repositório padrão do Ubuntu.
+sudo apt install cups
+Em seguida, inicie o CUPS.
+sudo systemctl start cups
+Ative o início automático no momento da inicialização.
+sudo systemctl enable cups
+Verifique seu status:
+systemctl status cups
+
+Em seguida, edite o arquivo de configuração principal do CUPS com um editor de texto de linha de comando como o Nano.
+sudo nano /etc/cups/cupsd.conf
+Primeiro, precisamos mostrar impressoras compartilhadas na rede local. Encontre a seguinte linha.
+Browsing Off
+Mudar para
+Browsing On
+
+para que outros computadores na mesma rede possam ver as impressoras conectadas ao seu computador Ubuntu.
+Por padrão, a interface da web CUPS está disponível apenas em localhost:631. Se você estiver executando o Ubuntu Server Edition, também pode querer fazer o CUPS escutar em todas as interfaces de rede disponíveis, para que possa acessar a interface da web do CUPS de outros computadores. Encontre a seguinte linha.
+Listen localhost:631
+Mudar para
+Port 631
+Portanto, o CUPS escutará em todas as interfaces de rede. Em seguida, localize as seguintes linhas.
+<Location />
+  Order allow,deny
+</Location>
+A configuração acima só permite o acesso à interface da web do CUPS a partir do localhost. Para permitir o acesso de outros computadores na mesma rede, adicione Allow @LOCAL para a configuração como abaixo.
+<Location />
+  Order allow,deny
+  Allow @LOCAL
+</Location>
+
+
+Se você deseja permitir a administração remota da rede local, adicione-o também para o /admin diretório.
+<Location /admin>
+  Order allow,deny
+  Allow @LOCAL
+</Location>
+Salve e feche o arquivo. Em seguida, reinicie o CUPS para que as alterações tenham efeito.
+sudo systemctl restart cups
+
+
+https://unix.stackexchange.com/questions/235477/cups-add-printer-page-returns-forbidden-on-web-interface
+
+
+I had to combine two other answers for Ubuntu, and the solution is to add myself to the lpadmin group:
+sudo usermod -a -G lpadmin your-username
+For every system, the solution should be:
+    • Open the file /etc/cups/cups-files.conf.
+    • Find the group name at the line containing SystemGroup.
