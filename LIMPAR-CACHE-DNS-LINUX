@@ -1,0 +1,4 @@
+LIMPAR CACHE DE DNS NO LINUX (30/07/21)
+
+
+sudo systemd-resolve --flush-caches
