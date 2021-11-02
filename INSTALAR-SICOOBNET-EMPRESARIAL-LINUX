@@ -1,0 +1,52 @@
+Instalando o Sicoob NetEmpresarial no Linux
+https://wikitux.wordpress.com/2019/10/05/instalando-o-sicoob-netempresarial-no-linux/
+15/04/21
+Publicado em 
+Para maior compatibilidade com o Sicoob NetEmpresarial, eu utilizo a instalação do oracle java 8 (atualmente o recomendado pelo suporte do Sicoob). Instruções de Instalação aqui.
+Os comandos abaixo esta considerando que o sicoobnet foi instalado no diretório /home do usuário
+Instalando o Sicoob NetEmpresarial
+1) Clique aqui para fazer download do instalador do Sicoobnet Empresarial.
+2) Após o download, execute o arquivo Java “InstaladorSicoobnetEmpresarial”.
+javaws InstaladorSicoobnetEmpresarial.jnlp
+3) O dialogo abaixo será apresentado, então acione o botão “Executar”.
+4) A janela do Sicoobnet Empresarial Instalador abrirá, então acionar o botão “Clique aqui para iniciar a instalação” para iniciar a instalação do Sicoobnet Empresarial.
+Obs. se necessário altere o diretório para a instalação
+
+5) Aguarde enquanto o Sicoobnet Empresarial é instalado. Quando a instalação for concluída o Sicoobnet Empresarial será iniciado automaticamente. Neste momento, o Sicoobnet Empresarial está instalado e um atalho para a aplicação encontra-se no Desktop.
+Criando entrada no menu do gnome-shell
+Considerando que o Sicoobnetempresarial foi instalado no diretório /home do úsuário logado.
+1) Crie um arquivo executável, com nome ‘sicoobnet.sh’, em /usr/local/bin, com o seguinte conteúdo;
+#!/bin/bash
+cd ~/Sicoobnet &&
+java -jar office.jar
+2) após criá-lo, dê permissão de execução
+sudo chmod +x /usr/local/bin/sicoobnet.sh
+3) copie o icone para /usr/share/icons
+sudo cp ~/Sicoobnet/SicoobEmp001.ico /usr/share/icons
+4) Crie um arquivo, com nome sicoobnet.desktop, em ~/.local/share/applications com o conteúdo abaixo;
+[Desktop Entry]
+Version=1.0
+Name=SicoobNet
+# From Ubuntu’s language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Gerenciador Financeiro SicoobNet
+GenericName[fil]=Gerenciador Financeiro SicoobNet
+# Gnome and KDE 3 uses Comment.
+Comment=Gerenciador Financeiro SicoobNet
+#Exec=/usr/local/bin/sicoobnet.sh
+Exec=sicoobnet.sh
+Terminal=false
+Icon=/usr/share/icons/SicoobEmp001.ico
+Type=Application
+Categories=restart;Finance;
+MimeType=
+Actions=
+[Desktop Action NewWindow]
+Name=New Window
+#Exec=/usr/local/bin/sicoobnet.sh
+Exec=sicoobnet.sh
+[Desktop Action NewPrivateWindow]
+Name=New Incognito Window
+#Exec=/usr/local/bin/sicoobnet.sh –incognito
+Exec=sicoobnet –incognito
+Testado no Ubuntu 19.04
+Fonte: https://empresarial.sicoobnet.com.br/instalador/instalarSicoobnetEmpresarial.jsp
