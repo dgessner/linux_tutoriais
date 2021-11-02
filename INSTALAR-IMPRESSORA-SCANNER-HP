@@ -1,0 +1,26 @@
+INSTALAR IMPRESSORA E SCANNER HP NO LINUX
+08/04/21 
+FONTE: https://www.cyberciti.biz/faq/how-to-install-networked-hp-printer-and-scanner-on-ubuntu-linux/
+
+https://developers.hp.com/hp-linux-imaging-and-printing/plugins
+
+sudo apt install hplip hplip-gui
+
+PARA INSTALAR A IMPRESSORA E CONFIGURAR:
+
+hp-setup
+
+PARA INSTALAR O SCANNER
+
+ACESSAR O SITE ABAIXO E ESCOLHER A VERSÃO DO PLUGIN
+https://developers.hp.com/hp-linux-imaging-and-printing/plugins
+
+NO NOSSO CASO BAIXAMOS:
+https://developers.hp.com/sites/default/files/hplip-3.20.11-plugin.run
+
+DEPOIS EXECUTE O COMANDO
+sh hplip-3.20.11-plugin.run
+
+POR FIM PARA CONFIGURAR OS DISPOSITIVOS INSTALADOS DA HP DIGITE
+
+hp-toolbox
