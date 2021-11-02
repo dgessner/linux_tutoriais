@@ -1,0 +1,18 @@
+INSTALAR EPSON L355 LINUX
+FONTE: https://www.impressorajato.com.br/blog/instalar-epson-l355-linux 
+(EM 05/04/21)
+
+IMPORTANTE BAIXAR O DRIVER PARA AMD64 NA EPSON
+http://download.ebz.epson.net/dsc/f/01/00/01/87/87/b90c68a7844fff22a3f4b4c273fcf3407699f89c/epson-inkjet-printer-201207w_1.0.0-1lsb3.2_amd64.deb
+
+OU ACESSANDO
+http://download.ebz.epson.net/dsc/search/01/search/searchModule
+INFORMAR SISTEMA OPERACIONAL LINUX
+INFORMAR IMPRESSORA L355
+
+QUANDO FOR INSTALAR A IMPRESSORA ELE ENCONTRA 2 OPÇÕES, ESCOLHER A QUE FOR PELO IP DELA
+
+INSTALAR PELO NAVEGADOR EM:
+http://localhost:631/
+
+DICAS PELO SITE: https://www.impressorajato.com.br/blog/instalar-epson-l355-linux
