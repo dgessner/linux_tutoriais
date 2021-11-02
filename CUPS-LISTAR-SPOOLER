@@ -1,0 +1,35 @@
+Cups – listar estado do spooler - 15/07/21
+
+lpstat -l -o 
+
+
+douglas@douglas-Inspiron-5548:~$ lpstat -l -o
+EPSON-DOUGLAS-304       douglas          65536   qui 15 jul 2021 15:03:41
+	Estado: Printing page 1, 62%
+	Alertas: job-printing
+	na fila de EPSON-DOUGLAS
+douglas@douglas-Inspiron-5548:~$ lpstat -l -o
+EPSON-DOUGLAS-304       douglas          65536   qui 15 jul 2021 15:03:41
+	Estado: Printing page 1, 65%
+	Alertas: job-printing
+	na fila de EPSON-DOUGLAS
+douglas@douglas-Inspiron-5548:~$ lpstat -l -o
+EPSON-DOUGLAS-304       douglas          65536   qui 15 jul 2021 15:03:41
+	Estado: Printing page 1, 67%
+	Alertas: job-printing
+	na fila de EPSON-DOUGLAS
+douglas@douglas-Inspiron-5548:~$ lpstat -l -o
+EPSON-DOUGLAS-304       douglas          65536   qui 15 jul 2021 15:03:41
+	Estado: Printing page 1, 67%
+	Alertas: job-printing
+	na fila de EPSON-DOUGLAS
+douglas@douglas-Inspiron-5548:~$ lpstat -l -o
+EPSON-DOUGLAS-304       douglas          65536   qui 15 jul 2021 15:03:41
+	Estado: Printing page 1, 69%
+	Alertas: job-printing
+	na fila de EPSON-DOUGLAS
+douglas@douglas-Inspiron-5548:~$ lpstat -l -o
+EPSON-DOUGLAS-304       douglas          65536   qui 15 jul 2021 15:03:41
+	Estado: Rendering completed
+	Alertas: job-printing
+	na fila de EPSON-DOUGLAS
