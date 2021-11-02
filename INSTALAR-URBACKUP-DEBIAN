@@ -1,0 +1,27 @@
+INSTALAR URBACKUP DEBIAN – 01/11/21
+https://www.howtoforge.com/how-to-install-urbackup-server-and-client-on-ubuntu-20-04/
+https://www.urbackup.org/debianserverinstall.html
+https://hndl.urbackup.org/Server/2.4.13/debian/buster/
+https://www.vivaolinux.com.br/topico/Debian/Erro-dpkg-Debian
+https://askubuntu.com/questions/40011/how-to-let-dpkg-i-install-dependencies-for-me
+
+apt-get update -y
+
+apt-get install curl gnupg2 software-properties-common -y
+
+wget https://hndl.urbackup.org/Server/2.4.13/debian/buster/urbackup-server_2.4.13_i386.deb
+
+dpkg -i urbackup-server_2.4.13_i386.deb
+
+apt-get -f install
+
+// SE DER ERRO DE DEPENDÊNCIAS PODE RECOMEÇAR O PROCESSO
+dpkg -i urbackup-server_2.4.13_i386.deb
+
+apt install -f
+
+// SE PRECISAR RECONFIGURAR O URBACKUP EXECUTE
+dpkg-reconfigure urbackup-server
+
+acesse o painel em
+http://192.168.0.2:55414
