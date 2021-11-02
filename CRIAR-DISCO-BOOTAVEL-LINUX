@@ -1,0 +1,10 @@
+CRIAR PENDRIVE BOOTÁVEL LINUX (18/10/2021)
+Fonte: https://www.vivaolinux.com.br/dica/Criar-um-pendrive-de-boot-do-Linux-Live-USB-via-terminal
+
+sudo fdisk -l
+
+pegar a unidade (/dev/sdb1)
+
+fazer o disco de boot
+
+sudo dd if=alpine-extended-3.14.2-x86_64.iso of=/dev/sdb1
